@@ -1,0 +1,18 @@
+# FeedWatch root: the deployed /feedwatch folder.
+# Only public/ is served. Everything else (app/, config/, vendor/ and so on)
+# is unreachable: requests are routed into public/, and each private folder
+# also has its own "Require all denied" as a second line of defence.
+
+# The account's default PHP is 7.4. Run FeedWatch on PHP 8.4.
+AddHandler application/x-httpd-alt-php84___lsphp .php
+
+Options -Indexes
+
+<IfModule mod_headers.c>
+    Header unset X-Powered-By
+    Header always set X-Content-Type-Options "nosniff"
+</IfModule>
+
+RewriteEngine On
+RewriteCond %{REQUEST_URI} !/public/
+RewriteRule ^(.*)$ public/$1 [L]

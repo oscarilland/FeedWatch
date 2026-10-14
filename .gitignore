@@ -1,0 +1,15 @@
+# Secrets and generated configuration - never commit
+.env
+.env.*
+config/config.local.php
+
+# Dependencies and caches
+/vendor/
+.phpunit.cache/
+.phpunit.result.cache
+
+# Runtime files
+*.log
+storage/cli-extensions.txt
+storage/cron-last-run.txt
+storage/sessions/sess_*

@@ -1,0 +1,8 @@
+parameters:
+    level: 9
+    paths:
+        - app
+        - bin
+        - public
+        - tests
+        - tools

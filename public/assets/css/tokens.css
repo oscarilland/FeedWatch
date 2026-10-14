@@ -1,0 +1,91 @@
+/*
+ * FeedWatch design tokens (plan 006). A dark operations console by default,
+ * with a light theme from the system setting (NFR-02).
+ * scripts/contrast-check.php checks every text and status pair against
+ * WCAG 2.2 AA in both themes. Components use only these properties.
+ */
+:root {
+    color-scheme: dark;
+
+    /* Surfaces */
+    --color-bg: #0b0f14;
+    --color-surface: #121821;
+    --color-surface-raised: #18212c;
+    --color-border: #2a3644;
+
+    /* Text */
+    --color-text: #e6edf3;
+    --color-text-muted: #9fadbb;
+    --color-link: #7cb8ff;
+    --color-focus: #ffd866;
+
+    /* Status roles: always shown with a shape and a label as well */
+    --color-healthy: #3fb950;
+    --color-degraded: #e3b341;
+    --color-down: #ff6b6b;
+    --color-neutral: #8b98a5;
+    --color-stale-bg: #3a2f12;
+
+    /* Chart series */
+    --color-series-a: #58a6ff;
+    --color-series-b: #d2a8ff;
+
+    /* Type */
+    --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-mono: ui-monospace, "Cascadia Mono", "SF Mono", Menlo, Consolas, monospace;
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.25rem;
+    --text-xl: 1.75rem;
+
+    /* Spacing: 4px scale */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --shadow-panel: 0 8px 24px rgb(0 0 0 / 0.45);
+
+    /* Motion */
+    --duration-fast: 150ms;
+    --duration-pulse: 1.2s;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        color-scheme: light;
+
+        --color-bg: #f3f5f8;
+        --color-surface: #ffffff;
+        --color-surface-raised: #f6f8fa;
+        --color-border: #d0d7de;
+
+        --color-text: #1f2328;
+        --color-text-muted: #57606a;
+        --color-link: #0550ae;
+        --color-focus: #9a6700;
+
+        --color-healthy: #1a7f37;
+        --color-degraded: #9a6700;
+        --color-down: #cf222e;
+        --color-neutral: #6e7781;
+        --color-stale-bg: #fff8c5;
+
+        --color-series-a: #0969da;
+        --color-series-b: #8250df;
+
+        --shadow-panel: 0 8px 24px rgb(140 149 159 / 0.3);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    :root {
+        --duration-fast: 0s;
+        --duration-pulse: 0s;
+    }
+}

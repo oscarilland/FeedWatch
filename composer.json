@@ -1,0 +1,39 @@
+{
+    "name": "feedwatch/feedwatch",
+    "description": "Market data feed health monitor (simulated data)",
+    "type": "project",
+    "license": "proprietary",
+    "require": {
+        "php": ">=8.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "FeedWatch\\": "app/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "FeedWatch\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "platform": {
+            "php": "8.4.0"
+        },
+        "sort-packages": true
+    },
+    "scripts": {
+        "lint": "@php tools/php-lint.php app bin config public tests tools",
+        "test": "phpunit",
+        "analyse": "phpstan analyse --memory-limit=512M",
+        "check": [
+            "@lint",
+            "@test",
+            "@analyse"
+        ]
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^2.2",
+        "phpunit/phpunit": "^12.5"
+    }
+}

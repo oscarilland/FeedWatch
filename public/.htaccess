@@ -1,0 +1,10 @@
+# FeedWatch web root. Real files (assets) are served directly; every other
+# request goes to the front controller.
+
+AddHandler application/x-httpd-alt-php84___lsphp .php
+
+Options -Indexes
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.php [L]
